@@ -30,7 +30,6 @@ private:
     ProgramUPtr m_postProgram;
     float m_gamma {1.0f};
 
-
     MeshUPtr m_box;
     MeshUPtr m_plane;
 
@@ -59,7 +58,6 @@ private:
     MaterialPtr m_box2Material;
     TexturePtr m_windowTexture;
 
-
     // camera parameter
     bool m_cameraControl { false };
     glm::vec2 m_prevMousePos { glm::vec2(0.0f) };
@@ -71,6 +69,17 @@ private:
 
     // framebuffer
     FramebufferUPtr m_framebuffer;
+
+    // cubemap
+    CubeTextureUPtr m_cubeTexture;
+    ProgramUPtr m_skyboxProgram;
+    ProgramUPtr m_envMapProgram;
+
+    TexturePtr m_grassTexture;
+    ProgramUPtr m_grassProgram;
+    std::vector<glm::vec3> m_grassPos;
+    BufferUPtr m_grassPosBuffer;
+    VertexLayoutUPtr m_grassInstance;
 
     int m_width {WINDOW_WIDTH};
     int m_height {WINDOW_HEIGHT};
